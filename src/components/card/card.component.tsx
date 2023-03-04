@@ -1,11 +1,13 @@
+import { Monster } from '../../App';
+
 import './card.styles.css';
 
-import { Component } from 'react';
+type CardProps = {
+  monster: Monster
+}
 
-class Card extends Component {
-  render() {
-    const { id, name, email } = this.props.data;
-
+const  Card = ({monster} : CardProps) =>{
+    const {id, email ,name } = monster
     return (
       <div className="card-container">
         <img
@@ -16,7 +18,7 @@ class Card extends Component {
         <p>{email}</p>
       </div>
     );
-  }
+  
 }
 
 export default Card;
